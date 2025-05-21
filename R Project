@@ -1,0 +1,155 @@
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# load R packages
+library(ggplot2)
+library(ggthemes)
+library(tidyr)
+library(tidyverse)
+
+## Dataset Introduction
+
+*college* dataset
+
+Higher education in the U.S. is shaped by various factors, including tuition costs, enrollment sizes, and institutional diversity. Understanding how diversity varies across public institutions and whether tuition rates are associated with diversity levels is critical for policymakers, educators, and prospective students.
+
+The dataset includes university diversity enrollment, enrollment size, and tuition-related variables. It contains the following variables:
+
+- name: University name.
+- state: Full state name.
+- state_code: Two-letter state abbreviation.
+- total_enrollment: Total student enrollment.
+- category: Demographic group (e.g., race/ethnicity, gender).
+- enrollment: Number of students in the category.
+- type: Institution type (e.g., public, private).
+- degree_length: Program length (e.g., 2-year, 4-year).
+- room_and_board: Cost of campus housing and meals.
+- in_state_tuition: Tuition for in-state students.
+- in_state_total: Total cost for in-state students.
+- out_of_state_tuition: Tuition for out-of-state students.
+- out_of_state_total: Total cost for out-of-state students.
+
+
+## Part 1: Preparation
+
+### Data Cleaning & Reshaping
+
+(a) Start by importing the *college* dataset and take a quick glance at the data. 
+
+```{r}
+# import as objects
+college <- read.csv("college.csv")
+
+```
+
+(b) After taking a look at the data structure, determine whether *college* is a long data or wide data. Justify your answer. 
+
+College is long data because there are multiple entries for each college, and the college name does repeat in the first column.
+
+
+(c) Explore the unique category of *category* variable in *college*. You can use either dplyr verb or base r function.
+```{r}
+# identify the unique categories in category variable 
+unique(college$category)
+
+```
+
+(d) Create a new dataset, *college_new*, by reshaping  *college* so that each school corresponds to only one row, with demographic categories as separate columns displaying the number of enrolled students in each category. 
+
+```{r}
+#reshape
+
+college_new<-pivot_wider(college, names_from = "category", values_from = "enrollment")
+
+```
+
+
+## Part 2: Research Question 
+
+### Project Objective and Reserach Question 
+The goal of this project is to analyze diversity trends in U.S. public colleges and universities, focusing on relationships between tuition, enrollment size, and diversity.
+
+Specifically, come up with *TWO* research questions where visualizations (i.e, scatterplots, bar graphs, boxplots, etc.) can help to answer the question. 
+
+Each research question should have **at least three variables**. [EX. What is the relationship between in-state tuition and minority enrollment, and how does this vary by degree type?]
+
+The two research questions do not have to be mutually exclusive; they can be related with overlapping variables.
+
+We will use *college_new* dataset saved in Part 1. 
+```{r} in
+#Your Research Question1 (Q1): What is the relationship between out of state tuition and minority enrollment, and how does this vary by college type? 
+
+#Your Research Question2 (Q2): What is the relationship between the total hispanic population and the college type, and how does this vary in 2 year vs. 4 year colleges?
+```
+
+## Part 3: Data Manipulation and Visualization
+
+Wrangle *college_new* dataset to answer your research question. Then, plug it into ggplot and create a plot. 
+
+```{r}
+#data manipulation and visualization PLOT1 for Q1. 
+
+#Filter by top public colleges
+college_new %>%
+    group_by(tot_minority)%>%
+    arrange(total_enrollment, tot_minority)%>%
+      select(type, total_enrollment, out_of_state_tuition, tot_minority)%>%
+    filter(total_enrollment>1000)%>%
+    filter(tot_minority>100)%>%
+    mutate(new_total_enrollment=factor(total_enrollment))%>%
+    ggplot(aes(x=out_of_state_tuition, y=tot_minority))+
+      geom_point(color="pink",alpha=1)+
+     labs(x="Out of State Tuition",y="Total Minority Population",title="Scatterplot of Out of State Tuition and Total Minority")+ 
+    facet_grid(~type)+
+      theme_bw()
+   
+```
+
+```{r}
+#data manipulation and visualization PLOT2 for Q2.
+
+college_new %>%
+    group_by(tot_minority, state)%>%
+    arrange(asian, tot_minority)%>%
+      select(degree_length, type, state, hispanic, tot_minority)%>%
+     filter(tot_minority>=50)%>%
+    mutate(new_tot_minority=factor(tot_minority))%>%
+    ggplot(aes(x=type, y=hispanic))+
+    geom_bar(stat="identity", aes(fill=type))+
+    scale_fill_manual(values=c("Private"="blue","Public"="red","For Profit"="green"))+
+   labs(x="College Type",y="Total Hispanic Population",title="Bar Graph of Total Hispanic Population Sorted by College Type")+ 
+      facet_grid(~degree_length)+
+  theme_bw() 
+  
+      
+```
+
+### Guideline
+Refer to the guidelines below for expectations in this section.
+
+(a) Must create meaningful **data subsets** from the reshaped dataset [EX. filtering by region, school type, tuition level]
+
+(b) Must use **at least three of these dplyr verbs**: group_by, mutate, summarize, select, count, and top_n (or slice_max)
+
+(c) Must use %>% to pipe data manipulation processes. Manipulation and visualization must be chained together using %>%.
+
+(d) Both plots:
+- Must have meaningful x-axis and y-axis titles
+- Must have an overall meaningful plot title
+- Include proper legend tables
+- Be well-structured and visually clear
+- Use an advanced ggplot feature (e.g. geom_smooth, geom_text, scale_fill_gradient/gradientn/manual) or a faceting feature (facet_wrap or facet_grid)
+
+
+## Part 4: Interpretation
+Please interpret your results. For each of the visualizations, please write 2-3 sentences explaining the visualization and what you learn from it in relation to your research question.
+
+- Findings for your Q1. The scatter plot on total out of state tuition and minority population shows that the majority of data points are in the "Public" category with a minority population of up to 40,000, which means that public colleges have the highest minority population. On the other hand, for-profit colleges have the least data points and only has a maximum minority  population population of about 25,000.
+ 
+
+- Findings for your Q2. For the 2 year colleges, the graph shows that 2 year colleges have the most Hispanic population in public colleges of 1200000 people, while for-profit and private schools has a close to 0 Hispanic population. For 4 year colleges, public schools have the most Hispanic students (420000 people), while private schools are in the middle (250000 people), and for-profit have the least Hispanic students.
+
+
+
+
