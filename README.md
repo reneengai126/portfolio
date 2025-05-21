@@ -16,4 +16,6 @@ Results:
 
 ![Graph](/graph)
 
+# Other Projects 
 
+### Life Science Consulting - Pharmaceutical Case Analysis 
