@@ -16,7 +16,31 @@ Methods:
 
 Results: 
 
+Skills Learned:
+
 ![Graph](/graph)
+
+### Using SQL in Python to Analyze COVID-19 Epidemiology Data
+
+Objective: 
+
+Methods:
+
+Results: 
+
+Skills Learned:
+
+Hyperlink to  Project
+
+### Using Tableau to Analyze the Economics of Job Market Performance
+
+Objective:
+
+Methods:
+
+Results:
+
+Skills Learned: 
 
 # Other Projects 
 
