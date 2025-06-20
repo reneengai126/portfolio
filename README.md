@@ -12,7 +12,7 @@ Skills: SQL, Python, R Studio
 
 Objective: 
 
-Methods:
+Methods: First used R to filter the data in the variables desired: 
 
 Results: 
 
