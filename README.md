@@ -31,6 +31,7 @@ Results:
 Skills Learned:
 
 Hyperlink to  Project
+![Poster](/poster)
 
 ### Using Tableau to Analyze the Economics of Job Market Performance
 
