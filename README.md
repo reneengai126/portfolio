@@ -1,6 +1,6 @@
 # Renee Ngai: Data Science Portfolio
 
-![Profile Picture](/Profile)
+![Banner](/banner)
 
 Hi! My name is Renee Ngai, an undergraduate student studying data science and biology at Emory University. This is my portfolio that showcases my work in 
 
