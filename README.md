@@ -2,7 +2,7 @@
 
 ![Banner](/banner)
 
-Hi! My name is Renee Ngai, an undergraduate student studying data science and biology at Emory University. This is my portfolio that showcases my work.
+Hi! My name is Renee Ngai, an undergraduate student studying data science and economics at Emory University. This is my portfolio that showcases my work outside of academics.
 
 Courses: Statistical Programming I and II (R, SQL, Python), Advanced Calculus, Macroeconomics, Data Science for Economists
 Programming: SQL, Python, Bash, R, Java, JavaScript  | Visualization: ggplot, PowerBI, Excel, matplotlib | Cloud: AWS 
