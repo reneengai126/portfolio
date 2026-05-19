@@ -23,7 +23,7 @@ Invest Atlanta is Atlanta's economic development agency. With 2026 FIFA and 2028
 
 <a href="https://github.com/brodyw52/Ai-Data-Lab">Github link</a>
 
-![Poster](main/poster.png)
+![Poster](poster.png)
 
 
 ### Yahoo Finance Machine Learning & Trading Analysis
