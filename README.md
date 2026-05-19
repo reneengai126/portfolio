@@ -1,5 +1,7 @@
 # Renee Ngai: Portfolio
 
+![IMAGE](headshot.png)
+
 Hi! My name is Renee Ngai, an undergraduate student studying data science and economics at Emory University. This is my portfolio that showcases my work outside of academics through clubs, hackathons, and past work experiences. My passion involves building predictive models, LLM apps, and turning messy data into clear decisions.
 
 Courses: Statistical Programming I and II (R, SQL, Python), Advanced Calculus, Macroeconomics, Data Science for Economists
