@@ -3,6 +3,8 @@
 Hi! My name is Renee Ngai, an undergraduate student studying data science and economics at Emory University. This is my portfolio that showcases my work outside of academics through clubs, hackathons, and past work experiences. My passion involves building predictive models, LLM apps, and turning messy data into clear decisions.
 
 Courses: Statistical Programming I and II (R, SQL, Python), Advanced Calculus, Macroeconomics, Data Science for Economists
+
+Core Technical Skills:
 Programming: SQL, Python, Bash, R, Java, JavaScript  | Visualization: ggplot, PowerBI, Excel, matplotlib | Cloud: AWS 
 Cloud: AWS EC2 | LLM: RAG, Hugging Face, Prompt Engineering |Machine Learning: Scikit-learn, Tensorflow, PyTorch
 
@@ -20,6 +22,9 @@ An offline-capable, multilingual clinical decision support system targeting rura
 Invest Atlanta is Atlanta's economic development agency. With 2026 FIFA and 2028 Super Bowl approaching, predicting MARTA ridership hotspots is critical for maximizing ROI for local businesses. Built an XGBoost model trained on historical MARTA trip data to forecast high-ridership train station hotspots around major events.
 
 <a href="https://github.com/brodyw52/Ai-Data-Lab">Github link</a>
+
+![Poster](main/poster.png)
+
 
 ### Yahoo Finance Machine Learning & Trading Analysis
 
