@@ -15,6 +15,7 @@ Cloud: AWS EC2 | LLM: RAG, Hugging Face, Prompt Engineering |Machine Learning: S
 An offline-capable, multilingual clinical decision support system targeting rural clinics in low-resource settings. Fine-tunes Gemma 4 (E4B) on tuberculosis, pneumonia, malaria, and malnutrition datasets, then wraps the model in a RAG pipeline grounded in WHO/CDC guidelines for accurate, context-aware disease detection.
 
 <a href="https://github.com/reneengai126/portfolio/blob/main/globalclinic-ai-disease-detection-using-gemma-4.ipynb">Github link</a>
+![WEBPAGE](webpage.png)
 
 
 ### ML Engineering · Emory AI Data Lab - XGBoost Hotspot Predictor
