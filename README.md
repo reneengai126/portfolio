@@ -58,5 +58,17 @@ Conclusions: Event attendance is the primary determinant of MARTA ridership spik
 
 ![Poster](poster.png)
 
+### Meeting Companion AI: Three-step reasoning pipeline (Foundry IQ · Agent Framework · YAML)
+
+<a href="https://github.com/reneengai126/meetingcompanionai/blob/main/README.md">Click me! Github link to project</a>
+
+Every decision meeting wastes its first 20 minutes because nobody pre-agreed on: what exactly is being decided, what the options are, what a good outcome looks like, and who has a vote vs just an opinion. This agent takes a one-sentence meeting topic ("Should we expand to the EU next quarter?") and generates a structured Decision Brief in under 30 seconds: options with pros/cons, a recommended framing, the key unknowns that would change the answer, and a pre-filled poll sent to Teams before the meeting even starts. The meeting becomes a 15-minute ratification, not a 60-minute debate.
+
+Three-step reasoning pipeline (Foundry IQ · Agent Framework · YAML)
+Classify — determines decision type (strategic, operational, resource, hiring, vendor, process), urgency, reversibility, the single decision owner, and who has actual voting input versus who is informational only.
+Structure — reframes the topic to surface what's actually being decided (often different from the stated question), generates 2-4 distinct options each with two pros, two cons, an effort rating, and a risk rating, produces a specific recommendation with non-generic reasoning, identifies exactly 3 key unknowns that would most change the answer, and sets 3 measurable decision criteria.
+Generate — produces a sub-250-word pre-meeting brief, a Teams poll payload, and an Outlook pre-read email.
+
+
 
 
